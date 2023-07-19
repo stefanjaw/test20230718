@@ -3,7 +3,7 @@ steps:
     args:
       - build
       - '-t'
-      - 'xxxxxapppxxxx21:$COMMIT_SHA'
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
       - .
   - name: gcr.io/cloud-builders/docker
     args:
