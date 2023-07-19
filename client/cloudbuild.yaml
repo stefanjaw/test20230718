@@ -1,15 +1,15 @@
 steps:
-  - name: xgcr.io/cloud-builders/docker
+  - name: gcr.io/cloud-builders/docker
     args:
       - build
       - '-t'
       - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
       - .
-  - name: xgcr.io/cloud-builders/docker
+  - name: gcr.io/cloud-builders/docker
     args:
       - push
       - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
-  - name: xgcr.io/google.com/cloudsdktool/cloud-sdk
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - run
       - deploy
