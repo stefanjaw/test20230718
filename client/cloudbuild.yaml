@@ -3,7 +3,7 @@ steps:
     args:
       - build
       - '-t'
-      - 'us-central1-docker.pkg.dev/staging-214517/cloud-run-source-deploy:$COMMIT_SHA'
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
       - .
   - name: gcr.io/cloud-builders/docker
     args:
